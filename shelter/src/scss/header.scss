@@ -1,0 +1,59 @@
+//Burger
+/*
+.icon-menu {
+  display: none;
+  @media (max-width: em(768)) {
+    display: block;
+    position: relative;
+    width: rem(44);
+    height: rem(44);
+    cursor: pointer;
+    z-index: 110;
+    border: rem(1) solid $borderColorDark;
+    border-radius: 50%;
+    margin-left: rem(30);
+    &::before,
+    &::after {
+      content: '';
+      transition: all 0.3s ease 0s;
+      right: 50%;
+      position: absolute;
+      width: rem(18);
+      height: rem(0);
+      border: rem(1) solid $mainColor;
+      border-radius: rem(1.5);
+      background-color: $mainColor;
+      transform: translateX(50%);
+    }
+    &::before {
+      top: calc(50% - rem(5));
+    }
+    &::after {
+      bottom: calc(50% - rem(5));
+    }
+    .menu-open & {
+      &::before,
+      &::after {
+      }
+      &::before {
+        top: calc(50% - rem(1));
+        transform: translateX(50%) rotate(-45deg);
+      }
+      &::after {
+        bottom: calc(50% - rem(1));
+        transform: translateX(50%) rotate(45deg);
+      }
+    }
+    .no-touch &:hover {
+      color: $textColorLight;
+      background-color: $bgColorContainer;
+      border: rem(1) solid $bgColorContainer;
+      &::before,
+      &::after {
+        border: rem(1) solid $bgColorBody;
+        background-color: $bgColorBody;
+      }
+    }
+  }
+}
+*/
