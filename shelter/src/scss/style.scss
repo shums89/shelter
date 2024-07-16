@@ -17,22 +17,35 @@
 
 //====================================================================
 // Шрифт по умолчанию
-$fontFamily: 'Inter';
-$fontSize: rem(14); // где 14(px) - размер шрифта по умолчанию из макета
+$fontMain: 'Georgia';
+$fontSecondary: 'Arial';
+$fontSize: rem(15); // где 14(px) - размер шрифта по умолчанию из макета
 
 // Основные цвета
-$mainColor: #000; // Цвет шрифта по умолчанию
-$bgColorBody: #fff;
+$colorMain: #000; // Цвет шрифта по умолчанию
+$colorBgBody: #fff;
+$colorPrimary: #f1cdb3;
+$colorPrimaryLight: #fddcc4;
+$colorLightXL: #fff;
+$colorLightL: #f6f6f6;
+$colorLightS: #fafafa;
+$colorDarkS: #cdcdcd;
+$colorDarkM: #b2b2b2;
+$colorDarkL: #545454;
+$colorDarkXL: #4c4c4c;
+$colorDark2XL: #444;
+$colorDark3XL: #292929;
+$gradientBackground: #211f20;
 
 //====================================================================
 // НАСТРОЙКИ
 
 // Минимальная ширина страницы
-$minWidth: 380;
+$minWidth: 320;
 // Ширина полотна (макета)
-$maxWidth: 1440;
+$maxWidth: 1280;
 // Ширина ограничивающего контейнера (0 = нет ограничения)
-$maxWidthContainer: 1360;
+$maxWidthContainer: 1200;
 // Общий отступ у контейнера
 // (30 = по 15px слева и справа, 0 = нет отступа)
 $containerPadding: 80;
@@ -41,15 +54,13 @@ $containerPadding: 80;
 $containerWidth: $maxWidthContainer + $containerPadding;
 
 // Размеры устройств
-$tabletWidth: 991.98;
-$mobileWidth: 767.98;
-$mobileSmallWidth: 479.98;
+$tabletWidth: 767.98;
+$mobileWidth: 319.98;
 
 // Брейк-поинты
 $pc: em($containerWidth); // ПК, ноутбуки, некоторые планшеты в горизонтальном положении
 $tablet: em($tabletWidth); // Планшеты, некоторые телефоны в горизонтальном положении
 $mobile: em($mobileWidth); // Телефоны L
-$mobileSmall: em($mobileSmallWidth); // Телефоны S
 
 // Тип адаптива:
 // 1 = отзывчивость (у контейнера нет брейкпоинтов),
@@ -62,7 +73,7 @@ $responsiveType: 1;
 
 html {
   scroll-behavior: smooth;
-  background: $bgColorBody;
+  background: $colorBgBody;
 }
 
 body {
