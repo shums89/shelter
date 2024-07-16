@@ -199,3 +199,45 @@
   &__button {
   }
 }
+
+//====================================================================
+
+.help {
+  // .help__container
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: rem(60);
+  }
+  // .help__title
+  &__title {
+    text-align: center;
+  }
+  // .help__list
+  &__list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: rem(55) rem(120);
+  }
+  // .help__item
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: rem(30);
+    color: $colorPrimary;
+  }
+  // .help__item-name
+  &__item-name {
+    font-family: $fontFamily;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 115%;
+    letter-spacing: 0.06em;
+    text-align: center;
+    color: $colorDarkL;
+  }
+}
