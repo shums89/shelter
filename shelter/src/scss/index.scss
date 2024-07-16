@@ -234,10 +234,73 @@
   &__item-name {
     font-family: $fontFamily;
     font-weight: 400;
-    font-size: 20px;
+    font-size: rem(20);
     line-height: 115%;
     letter-spacing: 0.06em;
     text-align: center;
     color: $colorDarkL;
   }
+}
+
+//====================================================================
+
+.donation {
+  background-color: $colorLightL;
+
+  // .donation__container
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: rem(30);
+  }
+  // .donation__img-wrapper
+  &__img-wrapper {
+  }
+  // .donation__content
+  &__content {
+    max-width: rem(380);
+    display: flex;
+    flex-direction: column;
+    gap: rem(20);
+  }
+  // .donation__title
+  &__title {
+  }
+  // .donation__subtitle
+  &__subtitle {
+    font-family: $fontFamily;
+    font-weight: 400;
+    font-size: rem(15);
+    line-height: 110%;
+    letter-spacing: 0.06em;
+    color: $colorDarkL;
+  }
+  // .donation__credit-card
+  &__credit-card {
+    padding: rem(10) rem(15);
+    width: max-content;
+    display: flex;
+    align-items: center;
+    gap: rem(15);
+    font-family: $fontFamily;
+    font-weight: 400;
+    font-size: rem(20);
+    line-height: 115%;
+    letter-spacing: 0.06em;
+    color: $colorDarkL;
+    background-color: $colorPrimary;
+    border-radius: rem(9);
+  }
+  // .donation__legal-info
+  &__legal-info {
+    font-family: $fontSecondary;
+    font-style: italic;
+    font-weight: 400;
+    font-size: rem(12);
+    line-height: 150%;
+    color: $colorDarkM;
+  }
+}
+.section-title {
 }

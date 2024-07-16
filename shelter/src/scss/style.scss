@@ -175,9 +175,11 @@ body {
   // .page__about
   // .page__pets
   // .page__help
+  // .page__donation
   &__about,
   &__pets,
-  &__help {
+  &__help,
+  &__donation {
     padding: rem(80) 0 rem(100);
   }
 }
