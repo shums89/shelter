@@ -2,22 +2,21 @@
   height: rem(908);
   padding-top: rem(90);
   background:
-    url('@img/start-screen-puppy.png') right bottom no-repeat,
     url('@img/noise_transparent.png') repeat,
-    // radial-gradient(at left top, #5b483a 0%, #262425 100%),
-    radial-gradient(237.5% 111.8% at 0% 0%, #5b483a 0%, #262425 100%),
+    radial-gradient(circle at left top, #5b483a 0%, #262425 100%),
     $gradientBackground;
 
   // .promo__container
   &__container {
-    display: flex;
-    flex-direction: column;
-    gap: rem(42);
-    padding-top: rem(253);
+    height: 100%;
+    margin-right: rem(40);
+    background: url('@img/start-screen-puppy.png') right bottom no-repeat;
   }
   // .promo__title
   &__title {
     max-width: rem(310);
+    margin-bottom: rem(42);
+    padding-top: rem(253);
     color: $colorLightXL;
     font-size: rem(44);
     font-family: $fontFamily;
@@ -27,6 +26,7 @@
   // .promo__text
   &__text {
     max-width: rem(460);
+    margin-bottom: rem(42);
     color: $colorDarkS;
     font-size: rem(15);
     font-family: $fontSecondary;
