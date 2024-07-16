@@ -37,3 +37,41 @@
   &__link {
   }
 }
+
+//====================================================================
+
+.about {
+  // .about__container
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  // .about__content
+  &__content {
+    display: inline-flex;
+    flex-direction: column;
+    gap: rem(25);
+  }
+  // .about__title
+  &__title {
+    max-width: rem(370);
+  }
+  // .about__text
+  &__text {
+    max-width: rem(430);
+    font-family: $fontSecondary;
+    font-weight: 400;
+    font-size: rem(15);
+    line-height: 160%;
+    color: $colorDarkXL;
+  }
+  // .about__img-wrapper
+  &__img-wrapper {
+    order: -1;
+    display: flex;
+    justify-content: center;
+  }
+  // .about__img
+  &__img {
+  }
+}

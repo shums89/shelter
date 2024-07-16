@@ -20,3 +20,14 @@
     }
   }
 }
+
+//====================================================================
+
+.section-title {
+  font-family: $fontMain;
+  font-weight: 400;
+  font-size: rem(35);
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  color: $colorDarkL;
+}
