@@ -20,9 +20,9 @@
       position: absolute;
       width: rem(18);
       height: rem(0);
-      border: rem(1) solid $mainColor;
+      border: rem(1) solid $colorMain;
       border-radius: rem(1.5);
-      background-color: $mainColor;
+      background-color: $colorMain;
       transform: translateX(50%);
     }
     &::before {
@@ -45,15 +45,131 @@
       }
     }
     .no-touch &:hover {
-      color: $textColorLight;
+      color: $colorTextLight;
       background-color: $bgColorContainer;
       border: rem(1) solid $bgColorContainer;
       &::before,
       &::after {
-        border: rem(1) solid $bgColorBody;
-        background-color: $bgColorBody;
+        border: rem(1) solid $colorBgBody;
+        background-color: $colorBgBody;
       }
     }
   }
 }
 */
+
+//====================================================================
+
+.header {
+  position: absolute;
+  width: 100%;
+  padding-top: rem(30);
+  color: $colorLightXL;
+
+  // .header__container
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  // .header__menu
+  &__menu {
+  }
+  // .header__logo
+  &__logo {
+  }
+}
+.menu {
+  // .menu__body
+  &__body {
+  }
+  // .menu__list
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: rem(35);
+  }
+  // .menu__item
+  &__item {
+  }
+  // .menu__link
+  &__link {
+    display: inline-block;
+    position: relative;
+    font-family: $fontSecondary;
+    font-weight: 400;
+    font-size: rem(15);
+    line-height: 160%;
+    color: $colorDarkS;
+
+    .html-pets & {
+      color: $colorDarkL;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: $colorLightS;
+
+        .html-pets & {
+          color: $colorDark3XL;
+        }
+      }
+    }
+
+    &_active {
+      color: $colorLightS;
+
+      .html-pets & {
+        color: $colorDark3XL;
+      }
+
+      &::after {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: rem(3);
+        left: 0;
+        bottom: 0;
+        background: $colorPrimary;
+      }
+    }
+  }
+}
+.header-logo {
+  display: flex;
+  flex-direction: column;
+  gap: rem(10);
+  transition: transform 0.3s ease 0s;
+
+  @media (any-hover: hover) {
+    &:hover {
+      transform: scale(1.01);
+    }
+  }
+
+  // .header-logo__title
+  &__title {
+    font-family: $fontMain;
+    font-weight: 400;
+    font-size: rem(32);
+    line-height: 110%;
+    letter-spacing: 0.06em;
+    color: $colorPrimary;
+
+    .html-pets & {
+      color: $colorDarkL;
+    }
+  }
+  // .header-logo__subtitle
+  &__subtitle {
+    font-family: $fontSecondary;
+    font-weight: 400;
+    font-size: rem(13);
+    letter-spacing: 0.1em;
+    color: $colorLightXL;
+
+    .html-pets & {
+      color: $colorDark3XL;
+    }
+  }
+}

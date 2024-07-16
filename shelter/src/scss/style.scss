@@ -167,3 +167,9 @@ body {
 
 // Подключение стилей отдельных страниц
 @import 'index';
+
+.page {
+  // .page__promo
+  &__promo {
+  }
+}
