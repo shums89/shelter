@@ -28,6 +28,55 @@
           </div>
         </div>
       </section>
+      <section class="page__pets pets">
+        <div class="pets__container">
+          <h2 class="pets__title section-title">Our friends who<br>are looking for a house</h2>
+          <div class="pets__slider pets-slider">
+            <div class="pets-slider__wrapper">
+              <ul class="pets-slider__swiper">
+                <li class="pets-slider__slide pets-slide pets-slide_active">
+                  <a class="pets-slide__link" href="#">
+                    <div class="pets-slide__image-ibg"><img data-src="@img/pets/pets-katrine.jpg" alt="Slide 1"></div>
+                    <div class="pets-slide__content">
+                      <h3 class="pets-slide__title">Katrine</h3>
+                      <button class="pets-slide__button button-secondary" type="button">Learn more</button>
+                    </div>
+                  </a>
+                </li>
+                <li class="pets-slider__slide pets-slide pets-slide_active">
+                  <a class="pets-slide__link" href="#">
+                    <div class="pets-slide__image-ibg"><img data-src="@img/pets/pets-jennifer.jpg" alt="Slide 2"></div>
+                    <div class="pets-slide__content">
+                      <h3 class="pets-slide__title">Jennifer</h3>
+                      <button class="pets-slide__button button-secondary" type="button">Learn more</button>
+                    </div>
+                  </a>
+                </li>
+                <li class="pets-slider__slide pets-slide pets-slide_active">
+                  <a class="pets-slide__link" href="#">
+                    <div class="pets-slide__image-ibg"><img data-src="@img/pets/pets-woody.jpg" alt="Slide 3"></div>
+                    <div class="pets-slide__content">
+                      <h3 class="pets-slide__title">Woody</h3>
+                      <button class="pets-slide__button button-secondary" type="button">Learn more</button>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <button class="pets-slider__nav-button pets-slider__nav-button_prev" type="button">
+              <svg width="14" height="6">
+                <use href="@img/icons/sprite.svg#arrow-slider"></use>
+              </svg>
+            </button>
+            <button class="pets-slider__nav-button pets-slider__nav-button_next" type="button">
+              <svg width="14" height="6">
+                <use href="@img/icons/sprite.svg#arrow-slider"></use>
+              </svg>
+            </button>
+          </div>
+          <button class="pets__buttton button-primary" type="button">Get to know the rest</button>
+        </div>
+      </section>
     </main>
     @@include('html/_footer.htm',{})
   </div>

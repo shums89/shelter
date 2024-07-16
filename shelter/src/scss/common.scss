@@ -1,18 +1,20 @@
 // Заголовки, общие БЄМ блоки и прочее...
 
-.button-primary {
-  width: rem(207);
-  height: rem(52);
+.button-primary,
+.button-secondary {
+  width: max-content;
+  padding: rem(15) rem(45);
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: $colorPrimary;
   border-radius: rem(100);
   color: $colorDark3XL;
-  font-family: $fontMain;
+  font-family: $fontFamily;
   font-size: rem(17);
   font-weight: 400;
-  line-height: rem(22);
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  transition: all 0.3s ease 0s;
 
   @media (any-hover: hover) {
     &:hover {
@@ -21,10 +23,25 @@
   }
 }
 
+.button-primary {
+  background-color: $colorPrimary;
+}
+
+.button-secondary {
+  background-color: transparent;
+  border: rem(2) solid $colorPrimary;
+
+  @media (any-hover: hover) {
+    &:hover {
+      border: rem(2) solid $colorPrimaryLight;
+    }
+  }
+}
+
 //====================================================================
 
 .section-title {
-  font-family: $fontMain;
+  font-family: $fontFamily;
   font-weight: 400;
   font-size: rem(35);
   line-height: 130%;

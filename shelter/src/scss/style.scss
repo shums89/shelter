@@ -17,7 +17,7 @@
 
 //====================================================================
 // Шрифт по умолчанию
-$fontMain: 'Georgia';
+$fontFamily: 'Georgia';
 $fontSecondary: 'Arial';
 $fontSize: rem(15); // где 14(px) - размер шрифта по умолчанию из макета
 
@@ -173,7 +173,9 @@ body {
   &__promo {
   }
   // .page__about
-  &__about {
+  // .page__pets
+  &__about,
+  &__pets {
     padding: rem(80) 0 rem(100);
   }
 }

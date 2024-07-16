@@ -20,9 +20,9 @@
     max-width: rem(310);
     color: $colorLightXL;
     font-size: rem(44);
-    font-family: $fontMain;
+    font-family: $fontFamily;
     font-weight: 400;
-    line-height: rem(57);
+    line-height: 130%;
   }
   // .promo__text
   &__text {
@@ -31,7 +31,7 @@
     font-size: rem(15);
     font-family: $fontSecondary;
     font-weight: 400;
-    line-height: rem(24);
+    line-height: 160%;
   }
   // .promo__link
   &__link {
@@ -41,6 +41,7 @@
 //====================================================================
 
 .about {
+  background-color: $colorLightXL;
   // .about__container
   &__container {
     display: grid;
@@ -73,5 +74,128 @@
   }
   // .about__img
   &__img {
+  }
+}
+
+//====================================================================
+
+.pets {
+  background-color: $colorLightL;
+
+  // .pets__container
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: rem(60);
+  }
+  // .pets__title
+  &__title {
+    text-align: center;
+  }
+  // .pets__slider
+  &__slider {
+  }
+  // .pets__buttton
+  &__buttton {
+  }
+}
+.pets-slider {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+  // .pets-slider__wrapper
+  &__wrapper {
+  }
+  // .pets-slider__swiper
+  &__swiper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: rem(90);
+  }
+  // .pets-slider__slide
+  &__slide {
+  }
+  // .pets-slider__nav-button
+  &__nav-button {
+    position: absolute;
+    width: rem(52);
+    height: rem(52);
+    top: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: rem(2) solid $colorPrimary;
+    transition: all 0.3s ease 0s;
+
+    @media (any-hover: hover) {
+      &:hover {
+        border: rem(2) solid $colorPrimaryLight;
+        background-color: $colorPrimaryLight;
+      }
+    }
+
+    & > svg {
+      color: $colorDark3XL;
+      width: rem(14);
+      height: rem(6);
+    }
+
+    // .pets-slider__nav-button_prev
+    &_prev {
+      left: 0;
+      transform: translateY(calc(-50%));
+    }
+    // .pets-slider__nav-button_next
+    &_next {
+      right: 0;
+      transform: translateY(calc(-50%)) rotate(-180deg);
+    }
+  }
+}
+.pets-slide {
+  border-radius: rem(9);
+  overflow: hidden;
+  background-color: $colorLightS;
+
+  // .pets-slide_active
+  &_active {
+  }
+  // .pets-slide__link
+  &__link {
+    width: rem(270);
+    height: rem(435);
+    display: grid;
+    grid-template-rows: rem(270) 1fr;
+    cursor: pointer;
+  }
+  // .pets-slide__image-ibg
+  &__image-ibg {
+    width: rem(270);
+    height: rem(270);
+  }
+  // .pets-slide__content
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: rem(30);
+  }
+  // .pets-slide__title
+  &__title {
+    font-family: $fontFamily;
+    font-weight: 400;
+    font-size: rem(20);
+    letter-spacing: 0.06em;
+    color: $colorDarkL;
+  }
+  // .pets-slide__button
+  &__button {
   }
 }
