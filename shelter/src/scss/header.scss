@@ -101,7 +101,7 @@
     font-size: rem(15);
     line-height: 160%;
     color: $colorDarkS;
-    transition: all 0.3s ease 0s;
+    transition: color 0.3s ease 0s;
 
     .html-pets & {
       color: $colorDarkL;
@@ -117,12 +117,12 @@
       }
     }
 
-    &_active {
+    .html-home &_home,
+    .html-pets &_pets {
       color: $colorLightS;
-
-      .html-pets & {
-        color: $colorDark3XL;
-      }
+      cursor: default;
+      user-select: none;
+      pointer-events: none;
 
       &::after {
         position: absolute;
@@ -130,9 +130,17 @@
         width: 100%;
         height: rem(3);
         left: 0;
-        bottom: 0;
+        bottom: rem(-2);
         background: $colorPrimary;
       }
+    }
+
+    .html-home &_home {
+      color: $colorLightS;
+    }
+
+    .html-pets &_pets {
+      color: $colorDark3XL;
     }
   }
 }
@@ -141,6 +149,12 @@
   flex-direction: column;
   gap: rem(10);
   transition: opacity 0.3s ease 0s;
+
+  .html-home & {
+    cursor: default;
+    user-select: none;
+    pointer-events: none;
+  }
 
   @media (any-hover: hover) {
     &:hover {

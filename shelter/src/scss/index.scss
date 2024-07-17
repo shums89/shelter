@@ -9,8 +9,7 @@
   // .promo__container
   &__container {
     height: 100%;
-    margin-right: rem(40);
-    background: url('@img/start-screen-puppy.png') right bottom no-repeat;
+    background: url('@img/start-screen-puppy.png') calc(100% - rem(40)) bottom no-repeat;
   }
   // .promo__title
   &__title {
@@ -44,8 +43,10 @@
   background-color: $colorLightXL;
   // .about__container
   &__container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: rem(120);
   }
   // .about__content
   &__content {
@@ -96,8 +97,8 @@
   // .pets__slider
   &__slider {
   }
-  // .pets__buttton
-  &__buttton {
+  // .pets__link
+  &__link {
   }
 }
 .pets-slider {
