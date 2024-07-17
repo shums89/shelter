@@ -48,3 +48,44 @@
   letter-spacing: 0.06em;
   color: $colorDarkL;
 }
+
+//====================================================================
+
+.card {
+  border-radius: rem(9);
+  overflow: hidden;
+  background-color: $colorLightS;
+
+  // .card__link
+  &__link {
+    min-width: rem(270);
+    min-height: rem(435);
+    display: grid;
+    grid-template-rows: rem(270) 1fr;
+    cursor: pointer;
+  }
+  // .card__image-ibg
+  &__image-ibg {
+    width: rem(270);
+    height: rem(270);
+  }
+  // .card__content
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: rem(30);
+  }
+  // .card__title
+  &__title {
+    font-family: $fontFamily;
+    font-weight: 400;
+    font-size: rem(20);
+    letter-spacing: 0.06em;
+    color: $colorDarkL;
+  }
+  // .card__button
+  &__button {
+  }
+}

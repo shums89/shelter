@@ -160,44 +160,8 @@
   }
 }
 .pets-slide {
-  border-radius: rem(9);
-  overflow: hidden;
-  background-color: $colorLightS;
-
   // .pets-slide_active
   &_active {
-  }
-  // .pets-slide__link
-  &__link {
-    width: rem(270);
-    height: rem(435);
-    display: grid;
-    grid-template-rows: rem(270) 1fr;
-    cursor: pointer;
-  }
-  // .pets-slide__image-ibg
-  &__image-ibg {
-    width: rem(270);
-    height: rem(270);
-  }
-  // .pets-slide__content
-  &__content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    row-gap: rem(30);
-  }
-  // .pets-slide__title
-  &__title {
-    font-family: $fontFamily;
-    font-weight: 400;
-    font-size: rem(20);
-    letter-spacing: 0.06em;
-    color: $colorDarkL;
-  }
-  // .pets-slide__button
-  &__button {
   }
 }
 
