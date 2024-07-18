@@ -8,6 +8,29 @@
   <div class="wrapper">
     @@include('html/_header.htm',{})
     <main class="page">
+      <h1 class="visually-hidden">Cozy House. Shelter for pets in Boston. Our pets</h1>
+      <section class="page__pets pets">
+        <div class="pets__container">
+          <h2 class="pets__title section-title">Our friends who<br>are looking for a house</h2>
+          <ul class="pets__list">
+            <li class="pets__item">@@include('html/_card.htm',{ "title":"Katrine", "image":"katrine.jpg"})</li>
+            <li class="pets__item">@@include('html/_card.htm',{ "title":"Jennifer", "image":"jennifer.jpg"})</li>
+            <li class="pets__item">@@include('html/_card.htm',{ "title":"Woody", "image":"woody.jpg"})</li>
+            <li class="pets__item">@@include('html/_card.htm',{ "title":"Sophia", "image":"sophia.jpg"})</li>
+            <li class="pets__item">@@include('html/_card.htm',{ "title":"Timmy", "image":"timmy.jpg"})</li>
+            <li class="pets__item">@@include('html/_card.htm',{ "title":"Charly", "image":"charly.jpg"})</li>
+            <li class="pets__item">@@include('html/_card.htm',{ "title":"Scarlett", "image":"scarlett.jpg"})</li>
+            <li class="pets__item">@@include('html/_card.htm',{ "title":"Freddie", "image":"freddie.jpg"})</li>
+          </ul>
+          <div class="pets__pagination pets-pagination">
+            <button class="pets-pagination__button pets-pagination__button_first pets-pagination__button_inactive" type="button">&lt;&lt;</button>
+            <button class="pets-pagination__button pets-pagination__button_prev pets-pagination__button_inactive" type="button">&lt;</button>
+            <button class="pets-pagination__button pets-pagination__button_page pets-pagination__button_active" type="button">1</button>
+            <button class="pets-pagination__button pets-pagination__button_next" type="button">&gt;</button>
+            <button class="pets-pagination__button pets-pagination__button_last" type="button">&gt;&gt;</button>
+          </div>
+        </div>
+      </section>
     </main>
     @@include('html/_footer.htm',{})
   </div>

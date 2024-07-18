@@ -61,11 +61,18 @@
 //====================================================================
 
 .header {
-  position: absolute;
-  width: 100%;
   padding-top: rem(30);
   padding-bottom: rem(17);
   color: $colorLightXL;
+
+  .html-home & {
+    position: absolute;
+    width: 100%;
+  }
+
+  .html-pets & {
+    padding-bottom: rem(32);
+  }
 
   // .header__container
   &__container {

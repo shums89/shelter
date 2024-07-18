@@ -52,17 +52,24 @@
 //====================================================================
 
 .card {
-  border-radius: rem(9);
-  overflow: hidden;
-  background-color: $colorLightS;
-
   // .card__link
   &__link {
-    min-width: rem(270);
-    min-height: rem(435);
+    width: rem(270);
+    height: rem(435);
     display: grid;
     grid-template-rows: rem(270) 1fr;
+    border-radius: rem(9);
+    overflow: hidden;
+    background-color: $colorLightS;
     cursor: pointer;
+    transition: all 0.3s ease 0s;
+
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: $colorLightXL;
+        box-shadow: 0 2px 35px 14px rgba(13, 13, 13, 0.04);
+      }
+    }
   }
   // .card__image-ibg
   &__image-ibg {
@@ -86,6 +93,8 @@
     color: $colorDarkL;
   }
   // .card__button
-  &__button {
+  .card__link:hover &__button {
+    background-color: $colorPrimaryLight;
+    border: rem(2) solid $colorPrimaryLight;
   }
 }

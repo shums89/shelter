@@ -79,92 +79,92 @@
 }
 
 //====================================================================
+.html-home {
+  & .pets {
+    background-color: $colorLightL;
 
-.pets {
-  background-color: $colorLightL;
-
-  // .pets__container
-  &__container {
+    // .pets__container
+    &__container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: rem(60);
+    }
+    // .pets__title
+    &__title {
+      text-align: center;
+    }
+    // .pets__slider
+    &__slider {
+    }
+    // .pets__link
+    &__link {
+    }
+  }
+  & .pets-slider {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: rem(60);
-  }
-  // .pets__title
-  &__title {
-    text-align: center;
-  }
-  // .pets__slider
-  &__slider {
-  }
-  // .pets__link
-  &__link {
-  }
-}
-.pets-slider {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-
-  // .pets-slider__wrapper
-  &__wrapper {
-  }
-  // .pets-slider__swiper
-  &__swiper {
     width: 100%;
-    display: flex;
-    justify-content: center;
-    gap: rem(90);
-  }
-  // .pets-slider__slide
-  &__slide {
-  }
-  // .pets-slider__nav-button
-  &__nav-button {
-    position: absolute;
-    width: rem(52);
-    height: rem(52);
-    top: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    border: rem(2) solid $colorPrimary;
-    transition: all 0.3s ease 0s;
 
-    @media (any-hover: hover) {
-      &:hover {
-        border: rem(2) solid $colorPrimaryLight;
-        background-color: $colorPrimaryLight;
+    // .pets-slider__wrapper
+    &__wrapper {
+    }
+    // .pets-slider__swiper
+    &__swiper {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: rem(90);
+    }
+    // .pets-slider__slide
+    &__slide {
+    }
+    // .pets-slider__nav-button
+    &__nav-button {
+      position: absolute;
+      width: rem(52);
+      height: rem(52);
+      top: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      border: rem(2) solid $colorPrimary;
+      transition: all 0.3s ease 0s;
+
+      @media (any-hover: hover) {
+        &:hover {
+          border: rem(2) solid $colorPrimaryLight;
+          background-color: $colorPrimaryLight;
+        }
+      }
+
+      & > svg {
+        color: $colorDark3XL;
+        width: rem(14);
+        height: rem(6);
+      }
+
+      // .pets-slider__nav-button_prev
+      &_prev {
+        left: 0;
+        transform: translateY(calc(-50%));
+      }
+      // .pets-slider__nav-button_next
+      &_next {
+        right: 0;
+        transform: translateY(calc(-50%)) rotate(-180deg);
       }
     }
-
-    & > svg {
-      color: $colorDark3XL;
-      width: rem(14);
-      height: rem(6);
-    }
-
-    // .pets-slider__nav-button_prev
-    &_prev {
-      left: 0;
-      transform: translateY(calc(-50%));
-    }
-    // .pets-slider__nav-button_next
-    &_next {
-      right: 0;
-      transform: translateY(calc(-50%)) rotate(-180deg);
+  }
+  & .pets-slide {
+    // .pets-slide_active
+    &_active {
     }
   }
 }
-.pets-slide {
-  // .pets-slide_active
-  &_active {
-  }
-}
-
 //====================================================================
 
 .help {
