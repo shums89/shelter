@@ -185,6 +185,7 @@
   }
   // .header-logo__subtitle
   &__subtitle {
+    margin-left: rem(4);
     font-family: $fontSecondary;
     font-weight: 400;
     font-size: rem(13);

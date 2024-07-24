@@ -9,21 +9,17 @@
     display: flex;
     gap: rem(160);
     height: 100%;
-    margin-right: rem(40);
-    padding-top: rem(56);
-    padding-bottom: rem(60);
-    background: url('@img/footer-puppy.png') right bottom no-repeat;
+    padding-top: rem(57);
+    padding-bottom: rem(37);
+    background: url('@img/footer-puppy.png') calc(100% - rem(40)) bottom no-repeat;
   }
   // .footer__contacts
   &__contacts {
     max-width: rem(279);
-    height: rem(234);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
   }
   // .footer__title
   &__title {
+    margin-bottom: rem(23);
     font-family: $fontFamily;
     font-weight: 400;
     font-size: rem(35);
@@ -33,11 +29,10 @@
   }
   // .footer__list
   &__list {
-    margin-top: auto;
-    display: flex;
-    flex-direction: column;
-    gap: rem(40);
-    color: $colorPrimary;
+    height: rem(142);
+    display: grid;
+    grid-template-rows: repeat(2, rem(64));
+    gap: rem(8);
   }
   // .footer__item
   &__item {
@@ -66,9 +61,5 @@
   // .footer__locations
   &__locations {
     max-width: rem(302);
-    height: rem(234);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
   }
 }

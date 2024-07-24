@@ -243,6 +243,7 @@
   }
   // .donation__credit-card
   &__credit-card {
+    margin-top: rem(-3);
     padding: rem(10) rem(15);
     width: max-content;
     display: flex;
@@ -256,6 +257,13 @@
     color: $colorDarkL;
     background-color: $colorPrimary;
     border-radius: rem(9);
+    transition: color 0.3s ease 0s;
+
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: $colorPrimaryLight;
+      }
+    }
   }
   // .donation__legal-info
   &__legal-info {

@@ -53,24 +53,20 @@
       color: $colorDark3XL;
       transition: all 0.3s ease 0s;
 
-      @media (any-hover: hover) {
-        &:hover {
-          background-color: $colorPrimaryLight;
-          border: rem(2) solid $colorPrimaryLight;
-        }
-      }
-
-      // .pets-pagination__button_active
-      &_active {
-        background-color: $colorPrimary;
-      }
-      // .pets-pagination__button_inactive
-      &_inactive {
+      &:disabled {
         color: $colorDarkS;
         border: rem(2) solid $colorDarkS;
         cursor: default;
         user-select: none;
         pointer-events: none;
+      }
+
+      @media (any-hover: hover) {
+        &:hover:not(.pets-pagination__button_page),
+        &:hover:not(:disabled) {
+          background-color: $colorPrimaryLight;
+          border: rem(2) solid $colorPrimaryLight;
+        }
       }
 
       // .pets-pagination__button_first
@@ -81,6 +77,10 @@
       }
       // .pets-pagination__button_page
       &_page {
+        background-color: $colorPrimary;
+        cursor: default;
+        user-select: none;
+        pointer-events: none;
       }
       // .pets-pagination__button_next
       &_next {
