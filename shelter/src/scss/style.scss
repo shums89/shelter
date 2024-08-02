@@ -123,8 +123,12 @@ body {
     }
     @if ($containerPadding>0) {
       // padding: 0 rem(math.div($containerPadding, 2));
-      @include adaptiveValue('padding-left', math.div($containerPadding, 2), 16, 768, 380, 1);
-      @include adaptiveValue('padding-right', math.div($containerPadding, 2), 16, 768, 380, 1);
+
+      @include adaptiveValue('padding-left', math.div($containerPadding, 2), 30, $containerWidth, 768, 2);
+      @include adaptiveValue('padding-left', 30, 20, 768, 320);
+
+      @include adaptiveValue('padding-right', math.div($containerPadding, 2), 30, $containerWidth, 768, 2);
+      @include adaptiveValue('padding-right', 30, 20, 768, 320);
     }
   }
 } @else {
