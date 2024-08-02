@@ -75,6 +75,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @include adaptiveValue('padding-left', 30, 20, 768, 320);
+    @include adaptiveValue('padding-right', 30, 20, 768, 320);
   }
   // .header__menu
   &__menu {
