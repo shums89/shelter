@@ -150,7 +150,8 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: rem(60);
+
+      @include adaptiveValue('row-gap', 60, 42, 768, 320, 1);
     }
     // .pets__title
     &__title {
@@ -170,31 +171,59 @@
     align-items: center;
     width: 100%;
 
+    @media (max-width: em($tabletWidth)) {
+      row-gap: rem(20);
+    }
+
     // .pets-slider__wrapper
     &__wrapper {
+      width: 100%;
+      overflow: hidden;
+
+      @media (max-width: em($desktopWidth)) {
+        max-width: rem(580);
+      }
+
+      @media (max-width: em($tabletWidth)) {
+        max-width: rem(270);
+      }
     }
     // .pets-slider__swiper
     &__swiper {
       width: 100%;
       display: flex;
       justify-content: center;
-      gap: rem(90);
+      column-gap: rem(90);
+
+      @media (max-width: em($desktopWidth)) {
+        justify-content: flex-start;
+        column-gap: rem(40);
+      }
     }
     // .pets-slider__slide
     &__slide {
     }
+    // .pets-slider__nav-buttons
+    &__nav-buttons {
+      display: flex;
+      justify-content: center;
+      column-gap: rem(80);
+    }
     // .pets-slider__nav-button
     &__nav-button {
-      position: absolute;
+      // position: absolute;
       width: rem(52);
       height: rem(52);
-      top: 50%;
       display: flex;
       justify-content: center;
       align-items: center;
       border-radius: 50%;
       border: rem(2) solid $colorPrimary;
       transition: all 0.3s ease 0s;
+
+      &_next {
+        transform: rotate(-180deg);
+      }
 
       @media (any-hover: hover) {
         &:hover {
@@ -203,21 +232,28 @@
         }
       }
 
+      @media (min-width: em(768)) {
+        position: absolute;
+        top: 50%;
+      }
+
       & > svg {
         color: $colorDark3XL;
         width: rem(14);
         height: rem(6);
       }
 
-      // .pets-slider__nav-button_prev
-      &_prev {
-        left: 0;
-        transform: translateY(calc(-50%));
-      }
-      // .pets-slider__nav-button_next
-      &_next {
-        right: 0;
-        transform: translateY(calc(-50%)) rotate(-180deg);
+      @media (min-width: em(768)) {
+        // .pets-slider__nav-button_prev
+        &_prev {
+          left: 0;
+          transform: translateY(calc(-50%));
+        }
+        // .pets-slider__nav-button_next
+        &_next {
+          right: 0;
+          transform: translateY(calc(-50%)) rotate(-180deg);
+        }
       }
     }
   }
