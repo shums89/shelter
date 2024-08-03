@@ -125,9 +125,16 @@ body {
       // padding: 0 rem(math.div($containerPadding, 2));
 
       @include adaptiveValue('padding-left', math.div($containerPadding, 2), 30, $containerWidth, 768, 2);
-      @include adaptiveValue('padding-left', 30, 10, 768, 320);
+      @include adaptiveValue('padding-left', 30, 20, 768, 320);
 
       @include adaptiveValue('padding-right', math.div($containerPadding, 2), 30, $containerWidth, 768, 2);
+      @include adaptiveValue('padding-right', 30, 20, 768, 320);
+    }
+  }
+
+  [class*='__container_narrow'] {
+    @if ($containerPadding>0) {
+      @include adaptiveValue('padding-left', 30, 10, 768, 320);
       @include adaptiveValue('padding-right', 30, 10, 768, 320);
     }
   }
@@ -185,6 +192,9 @@ body {
   &__pets,
   &__help,
   &__donation {
-    padding: rem(80) 0 rem(100);
+    padding: 0;
+
+    @include adaptiveValue('padding-top', 80, 42, 768, 320, 1);
+    @include adaptiveValue('padding-bottom', 100, 42, 768, 320, 1);
   }
 }
