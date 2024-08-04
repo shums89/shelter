@@ -283,25 +283,39 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: rem(55) rem(120);
+
+    @include adaptiveValue('column-gap', 120, 60, $containerWidth, 768, 2);
+    @include adaptiveValue('column-gap', 60, 30, 768, 320);
+
+    @include adaptiveValue('row-gap', 55, 30, 768, 320, 1);
+
+    @media (max-width: em($tabletWidth)) {
+      justify-content: flex-start;
+    }
   }
   // .help__item
   &__item {
+    width: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: rem(30);
     color: $colorPrimary;
+
+    @media (max-width: em(870)) {
+      @include adaptiveValue('width', 170, 130, 768, 320, 1);
+    }
   }
   // .help__item-name
   &__item-name {
     font-family: $fontFamily;
     font-weight: 400;
-    font-size: rem(20);
     line-height: 115%;
     letter-spacing: 0.06em;
     text-align: center;
     color: $colorDarkL;
+
+    @include adaptiveValue('font-size', 20, 15, 768, 320, 1);
   }
 }
 
