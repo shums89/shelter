@@ -329,10 +329,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: rem(30);
+    gap: rem(60) rem(30);
+
+    @media (max-width: em(768)) {
+      flex-direction: column;
+    }
   }
   // .donation__img-wrapper
   &__img-wrapper {
+    @media (max-width: em(768)) {
+      order: 1;
+    }
   }
   // .donation__content
   &__content {
@@ -370,6 +377,8 @@
     background-color: $colorPrimary;
     border-radius: rem(9);
     transition: color 0.3s ease 0s;
+
+    @include adaptiveValue('font-size', 20, 15, 768, 320, 1);
 
     @media (any-hover: hover) {
       &:hover {
