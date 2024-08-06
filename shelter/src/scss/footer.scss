@@ -18,8 +18,13 @@
 
     @media (max-width: em(1200)) {
       justify-content: center;
-      padding-bottom: rem(375);
       background: url('@img/footer-puppy.png') center bottom no-repeat;
+
+      @include adaptiveValue('padding-bottom', 375, 309, 768, 320, 1);
+    }
+
+    @media (max-width: em(768)) {
+      @include adaptiveValue('background-size', 300, 260, 768, 320, 1);
     }
   }
   // .footer__contacts
@@ -39,7 +44,9 @@
     @include adaptiveValue('font-size', 35, 25, 768, 320, 1);
 
     @media (max-width: em($tabletWidth)) {
-      max-width: rem(270);
+      max-width: rem(290);
+      margin-left: auto;
+      margin-right: auto;
       text-align: center;
 
       & br {
