@@ -15,9 +15,11 @@
     }
     // .pets__list
     &__list {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, rem(270));
+      // grid-auto-rows: 1fr;
+      justify-content: center;
       gap: rem(30) rem(40);
     }
     // .pets__item
@@ -32,7 +34,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: rem(20);
+
+    @include adaptiveValue('column-gap', 20, 10, 768, 320, 1);
 
     // .pets-pagination__button
     &__button {
