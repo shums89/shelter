@@ -15,14 +15,12 @@
     height: 100%;
     background: url('@img/start-screen-puppy.png') calc(100% - rem(40)) bottom no-repeat;
 
-    @media (max-width: em(768)) {
-      @include adaptiveValue('background-size', 569, 260, 768, 320, 1);
-      background: url('@img/start-screen-puppy.png') calc(100% - rem(30)) bottom no-repeat;
+    @media (max-width: em(940)) {
+      background: url('@img/start-screen-puppy.png') calc(100% - rem(30)) bottom / 74% no-repeat;
     }
 
-    @media (max-width: em(320)) {
-      @include adaptiveValue('background-size', 569, 260, 768, 320, 1);
-      background: url('@img/start-screen-puppy.png') calc(100% - rem(10)) bottom no-repeat;
+    @media (max-width: em($tabletWidth)) {
+      background: url('@img/start-screen-puppy.png') calc(100% - rem(10)) bottom / 81.5% no-repeat;
     }
   }
 
@@ -115,6 +113,10 @@
     @media (max-width: em(768)) {
       flex-basis: auto;
       max-width: rem(430);
+    }
+
+    @media (max-width: em(320)) {
+      max-width: rem(270);
     }
   }
   // .about__title

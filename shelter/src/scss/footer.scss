@@ -19,13 +19,15 @@
 
     @media (max-width: em(1200)) {
       justify-content: center;
-      background: url('@img/footer-puppy.png') center bottom no-repeat;
-
       @include adaptiveValue('padding-bottom', 353, 300, 768, 320, 1);
     }
 
-    @media (max-width: em(768)) {
-      @include adaptiveValue('background-size', 300, 260, 768, 320, 1);
+    @media (max-width: em(940)) {
+      background: url('@img/footer-puppy.png') center bottom / 300px no-repeat;
+    }
+
+    @media (max-width: em($tabletWidth)) {
+      background: url('@img/footer-puppy.png') center bottom / 260px no-repeat;
     }
   }
   // .footer__contacts
