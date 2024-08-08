@@ -17,6 +17,12 @@
 
     @media (max-width: em(768)) {
       @include adaptiveValue('background-size', 569, 260, 768, 320, 1);
+      background: url('@img/start-screen-puppy.png') calc(100% - rem(30)) bottom no-repeat;
+    }
+
+    @media (max-width: em(320)) {
+      @include adaptiveValue('background-size', 569, 260, 768, 320, 1);
+      background: url('@img/start-screen-puppy.png') calc(100% - rem(10)) bottom no-repeat;
     }
   }
 
@@ -52,6 +58,10 @@
     @media (max-width: em($tabletWidth)) {
       text-align: center;
     }
+
+    @media (max-width: em(320)) {
+      letter-spacing: 0.06em;
+    }
   }
   // .promo__text
   &__text {
@@ -77,17 +87,23 @@
 
 .about {
   background-color: $colorLightXL;
+
   // .about__container
   &__container {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: rem(80) rem(120);
 
     @include adaptiveValue('column-gap', 120, 30, $containerWidth, 768, 1);
+    @include adaptiveValue('row-gap', 80, 42, 768, 320, 1);
 
     @media (max-width: em(768)) {
       flex-direction: column;
+    }
+
+    @media (max-width: em(320)) {
+      padding-left: rem(25);
+      padding-right: rem(25);
     }
   }
   // .about__content
@@ -95,7 +111,6 @@
     flex: 0 1 rem(430);
     display: inline-flex;
     flex-direction: column;
-    gap: rem(25);
 
     @media (max-width: em(768)) {
       flex-basis: auto;
@@ -105,6 +120,7 @@
   // .about__title
   &__title {
     max-width: rem(370);
+    margin-bottom: rem(25);
 
     @media (max-width: em($tabletWidth)) {
       text-align: center;
@@ -113,14 +129,25 @@
   }
   // .about__text
   &__text {
+    display: inline-block;
     font-family: $fontSecondary;
     font-weight: 400;
     font-size: rem(15);
     line-height: 160%;
     color: $colorDarkXL;
 
+    &:not(:last-child) {
+      margin-bottom: rem(25);
+    }
+
     @media (max-width: em($tabletWidth)) {
       text-align: justify;
+    }
+
+    @media (max-width: em(320)) {
+      &:not(:last-child) {
+        margin-bottom: rem(22);
+      }
     }
   }
   // .about__img-wrapper
@@ -271,7 +298,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: rem(60);
+
+    @include adaptiveValue('row-gap', 60, 42, 768, 320, 1);
   }
   // .help__title
   &__title {
@@ -292,6 +320,10 @@
     @media (max-width: em($tabletWidth)) {
       justify-content: flex-start;
     }
+
+    @media (max-width: em(320)) {
+      max-width: rem(290);
+    }
   }
   // .help__item
   &__item {
@@ -299,8 +331,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: rem(30);
     color: $colorPrimary;
+
+    @include adaptiveValue('row-gap', 30, 20, 768, 320, 1);
+
+    & svg {
+      @include adaptiveValue('width', 60, 50, 768, 320, 1);
+      @include adaptiveValue('height', 60, 50, 768, 320, 1);
+    }
 
     @media (max-width: em(870)) {
       @include adaptiveValue('width', 170, 130, 768, 320, 1);
@@ -329,7 +367,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: rem(60) rem(30);
+    column-gap: rem(30);
+
+    @include adaptiveValue('row-gap', 60, 42, 768, 320, 1);
 
     @media (max-width: em(768)) {
       flex-direction: column;
@@ -339,6 +379,10 @@
   &__img-wrapper {
     @media (max-width: em(768)) {
       order: 1;
+    }
+
+    & img {
+      @include adaptiveValue('width', 505, 260, 768, 320, 1);
     }
   }
   // .donation__content
@@ -350,6 +394,9 @@
   }
   // .donation__title
   &__title {
+    @media (max-width: em($tabletWidth)) {
+      text-align: center;
+    }
   }
   // .donation__subtitle
   &__subtitle {
@@ -359,6 +406,11 @@
     line-height: 110%;
     letter-spacing: 0.06em;
     color: $colorDarkL;
+
+    @media (max-width: em(320)) {
+      letter-spacing: 0;
+      text-align: center;
+    }
   }
   // .donation__credit-card
   &__credit-card {
@@ -385,6 +437,10 @@
         background-color: $colorPrimaryLight;
       }
     }
+
+    @media (max-width: em(320)) {
+      margin-top: rem(5);
+    }
   }
   // .donation__legal-info
   &__legal-info {
@@ -394,5 +450,9 @@
     font-size: rem(12);
     line-height: 150%;
     color: $colorDarkM;
+
+    @media (max-width: em(320)) {
+      text-align: justify;
+    }
   }
 }
