@@ -2,6 +2,7 @@
 
 .icon-menu {
   display: none;
+
   @media (max-width: em($tabletWidth)) {
     display: block;
     position: relative;
@@ -9,6 +10,7 @@
     height: rem(22);
     cursor: pointer;
     z-index: 110;
+    transition: all 0.3s ease 0s;
 
     & span {
       display: block;
@@ -16,6 +18,10 @@
       height: rem(2);
       background-color: $colorPrimary;
       transition: all 0.3s ease 0s;
+
+      .html-pets & {
+        background-color: $colorMain;
+      }
     }
 
     &::before,
@@ -28,6 +34,10 @@
       height: rem(2);
       background-color: $colorPrimary;
       transform: translateX(50%);
+
+      .html-pets & {
+        background-color: $colorMain;
+      }
     }
 
     &::before {
@@ -40,15 +50,22 @@
 
     .menu-open & {
       transform: rotate(90deg);
+      transition: all 0.3s ease 0s;
     }
 
     .no-touch &:hover {
-      & span {
-        background-color: $colorPrimaryLight;
-      }
+      & span,
       &::before,
       &::after {
         background-color: $colorPrimaryLight;
+      }
+    }
+
+    .no-touch.html-pets &:hover {
+      & span,
+      &::before,
+      &::after {
+        background-color: $colorDark3XL;
       }
     }
   }
@@ -90,8 +107,24 @@
   // .menu__body
   &__body {
     display: flex;
+
     @media (max-width: em($tabletWidth)) {
-      display: none;
+      justify-content: flex-end;
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 100vw;
+      height: 100vh;
+      // background-color: $colorDark3XL;
+      transition: opacity 1.3s ease 0s;
+      z-index: 100;
+      opacity: 0;
+      background-color: rgba(0, 0, 0, 0.6);
+
+      .menu-open & {
+        right: 0;
+        opacity: 1;
+      }
     }
   }
   // .menu__list
@@ -99,6 +132,27 @@
     display: flex;
     align-items: center;
     gap: rem(35);
+
+    @media (max-width: em($tabletWidth)) {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 100vw;
+      height: 100vh;
+      flex-direction: column;
+      justify-content: center;
+      width: rem(320);
+      background-color: $colorDark3XL;
+      transition: all 1s ease 0s;
+
+      .menu-open & {
+        right: 0;
+      }
+
+      .html-pets & {
+        background-color: $colorBgBody;
+      }
+    }
   }
   // .menu__item
   &__item {
@@ -113,6 +167,10 @@
     line-height: 160%;
     color: $colorDarkS;
     transition: color 0.3s ease 0s;
+
+    @media (max-width: em($tabletWidth)) {
+      font-size: rem(32);
+    }
 
     .html-pets & {
       color: $colorDarkL;
