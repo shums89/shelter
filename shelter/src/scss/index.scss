@@ -208,6 +208,7 @@
     &__wrapper {
       width: 100%;
       overflow: hidden;
+      max-width: rem(990);
 
       @media (max-width: em($desktopWidth)) {
         max-width: rem(580);
@@ -221,11 +222,9 @@
     &__swiper {
       width: 100%;
       display: flex;
-      justify-content: center;
       column-gap: rem(90);
 
       @media (max-width: em($desktopWidth)) {
-        justify-content: flex-start;
         column-gap: rem(40);
       }
     }
