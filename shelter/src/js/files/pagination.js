@@ -1,5 +1,4 @@
 import { getData } from "./functions.js";
-import { openModal } from "./modal.js";
 import { getCard } from "./card.js";
 
 const initPagination = () => {
@@ -123,7 +122,6 @@ const initPagination = () => {
     });
 
     updateBtns();
-    openModal();
   };
 
   const renderPets = () => {

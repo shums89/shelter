@@ -125,10 +125,6 @@
     border-radius: rem(9);
     background-color: $colorBgBody;
     box-shadow: 0 rem(2) rem(35) rem(14) rgba(13, 13, 13, 0.04);
-
-    @media (max-width: em($tabletWidth)) {
-      padding-bottom: rem(7);
-    }
   }
   // .modal__image
   &__image {
@@ -195,8 +191,8 @@
     letter-spacing: 0.06em;
     color: $colorMain;
 
-    @include adaptiveValue('margin-bottom', 40, 26, $containerWidth, 768, 2);
-    @include adaptiveValue('margin-bottom', 26, 33, 768, 320);
+    @include adaptiveValue('margin-bottom', 40, 20, $containerWidth, 768, 2);
+    @include adaptiveValue('margin-bottom', 20, 24, 768, 320);
 
     @include adaptiveValue('font-size', 15, 13, $containerWidth, 768, 1);
     @include adaptiveValue('line-height', 17, 14, $containerWidth, 768, 1);
@@ -205,8 +201,47 @@
       text-align: justify;
     }
   }
-  // .modal__parameters
-  &__parameters {
+  // .modal__parameters-list
+  &__parameters-list {
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(12);
+    font-family: $fontFamily;
+    font-size: 15px;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+    color: $colorMain;
+
+    @include adaptiveValue('row-gap', 12, 6, $containerWidth, 768, 1);
+  }
+  // .modal__parameters-item
+  &__parameters-item {
+    position: relative;
+    padding-left: rem(14);
+
+    &:before {
+      position: absolute;
+      content: '';
+      width: rem(4);
+      height: rem(4);
+      left: 0;
+      top: rem(6);
+      border-radius: 50%;
+      background-color: $colorPrimary;
+    }
+
+    // .modal__parameters-item_age
+    &_age {
+    }
+    // .modal__parameters-item_inoculations
+    &_inoculations {
+    }
+    // .modal__parameters-item_diseases
+    &_diseases {
+    }
+    // .modal__parameters-item_parasites
+    &_parasites {
+    }
   }
   // .modal__btn
   &__btn {
@@ -233,77 +268,6 @@
         background-color: $colorPrimaryLight;
         border: rem(2) solid $colorPrimaryLight;
       }
-    }
-  }
-}
-.parameters {
-  display: flex;
-  flex-wrap: wrap;
-  gap: rem(11) rem(6);
-  font-family: $fontFamily;
-  font-size: rem(15);
-  letter-spacing: 0.06em;
-  color: $colorMain;
-
-  @include adaptiveValue('line-height', 7, 0, $containerWidth, 768, 1);
-
-  // .parameters__key
-  &__key {
-    position: relative;
-    padding-left: rem(15);
-    font-weight: 700;
-
-    &:before {
-      position: absolute;
-      content: '';
-      width: rem(4);
-      height: rem(4);
-      left: 0;
-      top: 50%;
-      border-radius: 50%;
-      transform: translateY(-50%);
-      background-color: $colorPrimary;
-    }
-
-    &:after {
-      content: ': ';
-    }
-
-    // .parameters__key_age
-    &_age {
-    }
-    // .parameters__key_inoculations
-    &_inoculations {
-    }
-    // .parameters__key_diseases
-    &_diseases {
-    }
-    // .parameters__key_parasites
-    &_parasites {
-    }
-  }
-  // .parameters__value
-  &__value {
-    display: contents;
-
-    &:not(:last-child):after {
-      content: '';
-      display: block;
-      width: 100%;
-      height: rem(1);
-    }
-
-    // .parameters__value_age
-    &_age {
-    }
-    // .parameters__value_inoculations
-    &_inoculations {
-    }
-    // .parameters__value_diseases
-    &_diseases {
-    }
-    // .parameters__value_parasites
-    &_parasites {
     }
   }
 }

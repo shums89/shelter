@@ -1,5 +1,4 @@
 import { getData } from "./functions.js";
-import { openModal } from "./modal.js";
 import { getCard } from "./card.js";
 
 const initPetSlider = () => {
@@ -81,7 +80,6 @@ const initPetSlider = () => {
 
         btnPrev.disabled = false;
         btnNext.disabled = false;
-        openModal();
         resolve();
       }, 500);
     });
@@ -131,8 +129,6 @@ const initPetSlider = () => {
     fullPetList.forEach(id => {
       sliderList.insertAdjacentElement("beforeend", getSlide(id))
     });
-
-    openModal();
   };
 
   const renderSlider = () => {
