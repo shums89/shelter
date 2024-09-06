@@ -25,4 +25,5 @@ flsFunctions.menuInit();
 /* Подключаем файлы со своим кодом */
 import "./files/cross-check.js";
 import "./files/slider.js";
+import "./files/pagination.js";
 import "./files/script.js";
