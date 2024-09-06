@@ -1,4 +1,6 @@
 import { getData } from "./functions.js";
+import { openModal } from "./modal.js";
+import { getCard } from "./card.js";
 
 const initPetSlider = () => {
   const slider = document.querySelector('.pets-slider');
@@ -27,12 +29,6 @@ const initPetSlider = () => {
 
     oldWidth = window.innerWidth;
   });
-
-  const openModal = () => {
-    sliderList.querySelectorAll('.pets-slider__slide').forEach(slide => {
-      slide.addEventListener('click', e => e.preventDefault());
-    });
-  };
 
   const getCountSlides = () => {
     const width = window.innerWidth;
@@ -68,7 +64,7 @@ const initPetSlider = () => {
             prevPetSubList = getNewPetSubList();
 
             prevPetSubList.forEach((id, i) => {
-              sliderList.insertAdjacentHTML("afterbegin", getSlide(id));
+              sliderList.insertAdjacentElement("afterbegin", getSlide(id));
               sliderItems[sliderItems.length - 1 - i].remove();
             });
             break;
@@ -78,7 +74,7 @@ const initPetSlider = () => {
             nextPetSubList = getNewPetSubList();
 
             nextPetSubList.forEach((id, i) => {
-              sliderList.insertAdjacentHTML("beforeend", getSlide(id));
+              sliderList.insertAdjacentElement("beforeend", getSlide(id));
               sliderItems[i].remove();
             });
         }
@@ -114,26 +110,12 @@ const initPetSlider = () => {
   };
 
   const getSlide = (id) => {
-    const pet = originalPetList.find(pet => pet.id == id);
+    const pet = document.createElement('li');
+    pet.classList.add('pets-slider__slide');
+    pet.dataset.id = id;
+    pet.append(getCard(pet, id));
 
-    return `
-      <li class="pets-slider__slide" data-id="${pet.id}">
-        <article class="card">
-          <a class="card__link" href="#">
-            <div class="card__image-ibg">
-              <picture>
-                <source data-srcset="img/pets/${pet.img}.webp" srcset="img/pets/${pet.img}.webp" type="image/webp">
-                <img src="img/pets/${pet.img}.jpg" data-src="img/pets/${pet.img}.jpg" alt="${pet.name}">
-              </picture>
-            </div>
-            <div class="card__content">
-              <h3 class="card__title">${pet.name}</h3>
-              <div class="card__button button-secondary">Learn more</div>
-            </div>
-          </a>
-        </article>
-      </li>
-    `
+    return pet;
   };
 
   const generateSlides = () => {
@@ -147,7 +129,7 @@ const initPetSlider = () => {
     sliderList.innerHTML = ''
 
     fullPetList.forEach(id => {
-      sliderList.insertAdjacentHTML("beforeend", getSlide(id))
+      sliderList.insertAdjacentElement("beforeend", getSlide(id))
     });
 
     openModal();
