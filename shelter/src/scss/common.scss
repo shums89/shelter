@@ -70,7 +70,7 @@
     @media (any-hover: hover) {
       &:hover {
         background-color: $colorLightXL;
-        box-shadow: 0 2px 35px 14px rgba(13, 13, 13, 0.04);
+        box-shadow: 0 rem(2) rem(35) rem(14) rgba(13, 13, 13, 0.04);
       }
     }
   }
@@ -99,5 +99,170 @@
   .card__link:hover &__button {
     background-color: $colorPrimaryLight;
     border: rem(2) solid $colorPrimaryLight;
+  }
+}
+
+//====================================================================
+
+.modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(29, 29, 29, 0.6);
+  z-index: 10;
+
+  &.hidden {
+    display: none;
+  }
+
+  // .modal__wrapper
+  &__wrapper {
+    position: relative;
+    display: grid;
+    grid-template-columns: rem(500) 1fr;
+    column-gap: rem(19);
+    max-width: rem(900);
+    width: 100%;
+    border-radius: rem(9);
+    background-color: $colorBgBody;
+    box-shadow: 0 rem(2) rem(35) rem(14) rgba(13, 13, 13, 0.04);
+  }
+  // .modal__image
+  &__image {
+    width: rem(500);
+    height: rem(500);
+    border-radius: rem(9) 0 0 rem(9);
+    overflow: hidden;
+
+    & img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+  }
+  // .modal__content
+  &__content {
+    padding: rem(50) rem(20) rem(10) rem(10);
+  }
+  // .modal__title
+  &__title {
+    margin-bottom: rem(10);
+    font-family: $fontFamily;
+    font-size: rem(35);
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: $colorMain;
+  }
+  // .modal__subtitle
+  &__subtitle {
+    margin-bottom: rem(40);
+    font-family: $fontFamily;
+    font-size: rem(20);
+    line-height: 115%;
+    letter-spacing: 0.06em;
+    color: $colorMain;
+  }
+  // .modal__description
+  &__description {
+    margin-bottom: rem(40);
+    font-family: $fontFamily;
+    font-size: rem(15);
+    line-height: 114%;
+    letter-spacing: 0.06em;
+    color: $colorMain;
+  }
+  // .modal__parameters
+  &__parameters {
+  }
+  // .modal__btn
+  &__btn {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: rem(52);
+    height: rem(52);
+    top: rem(-52);
+    right: rem(-42);
+    border-radius: 50%;
+    color: $colorDark3XL;
+    background-color: transparent;
+    border: rem(2) solid $colorPrimary;
+    transition: all 0.3s ease 0s;
+
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: $colorPrimaryLight;
+        border: rem(2) solid $colorPrimaryLight;
+      }
+    }
+  }
+}
+.parameters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: rem(11) rem(6);
+  font-family: $fontFamily;
+  font-size: rem(15);
+  line-height: 114%;
+  letter-spacing: 0.06em;
+  color: $colorMain;
+
+  // .parameters__key
+  &__key {
+    flex: 0 0 auto;
+    position: relative;
+    display: inline-block;
+    padding-left: rem(15);
+    font-weight: 700;
+
+    &:before {
+      position: absolute;
+      content: '';
+      width: rem(4);
+      height: rem(4);
+      left: 0;
+      top: 50%;
+      border-radius: 50%;
+      transform: translateY(-50%);
+      background-color: $colorPrimary;
+    }
+
+    &:after {
+      content: ': ';
+    }
+
+    // .parameters__key_age
+    &_age {
+    }
+    // .parameters__key_inoculations
+    &_inoculations {
+    }
+    // .parameters__key_diseases
+    &_diseases {
+    }
+    // .parameters__key_parasites
+    &_parasites {
+    }
+  }
+  // .parameters__value
+  &__value {
+    flex: 1 1 rem(180);
+    display: inline-block;
+
+    // .parameters__value_age
+    &_age {
+    }
+    // .parameters__value_inoculations
+    &_inoculations {
+    }
+    // .parameters__value_diseases
+    &_diseases {
+    }
+    // .parameters__value_parasites
+    &_parasites {
+    }
   }
 }
