@@ -9,8 +9,11 @@ export const getCard = (element, id) => {
               <a class="card__link" href="#">
                 <div class="card__image-ibg">
                   <picture>
-                    <source data-srcset="img/pets/${pet.img}.webp" srcset="img/pets/${pet.img}.webp" type="image/webp">
-                    <img src="img/pets/${pet.img}.jpg" data-src="img/pets/${pet.img}.jpg" alt="${pet.name}">
+                    <source 
+                      data-srcset="img/pets/${pet.img.replace(/\.[^.]+$/, "")}.webp" 
+                      srcset="img/pets/${pet.img.replace(/\.[^.]+$/, "")}.webp" type="image/webp"
+                    >
+                    <img src="img/pets/${pet.img}" data-src="img/pets/${pet.img}" alt="${pet.name}">
                   </picture>
                 </div>
                 <div class="card__content">
