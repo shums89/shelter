@@ -131,7 +131,7 @@
   &__list {
     display: flex;
     align-items: center;
-    gap: rem(35);
+    gap: rem(40) rem(35);
 
     @media (max-width: em($tabletWidth)) {
       position: fixed;
