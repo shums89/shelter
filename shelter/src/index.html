@@ -10,10 +10,12 @@
     <main class="page">
       <h1 class="visually-hidden">Cozy House. Shelter for pets in Boston</h1>
       <section class="page__promo promo">
-        <div class="promo__container">
-          <h2 class="promo__title">Not only people need a house</h2>
-          <p class="promo__text">We offer to give a chance to a little and nice puppy with an extremely wide and open heart. He or she will love you more than anybody else in the world, you will see!</p>
-          <a class="promo__link button-primary" href="#pets">Make a friend</a>
+        <div class="promo__container promo__container_narrow">
+          <div class="promo__content">
+            <h2 class="promo__title">Not only people need a house</h2>
+            <p class="promo__text">We offer to give a chance to a little and nice puppy with an extremely wide and open heart. He or she will love you more than anybody else in the world, you will see!</p>
+            <a class="promo__link button-primary" href="#pets">Make a friend</a>
+          </div>
         </div>
       </section>
       <section class="page__about about">
@@ -29,7 +31,7 @@
         </div>
       </section>
       <section class="page__pets pets" id="pets">
-        <div class="pets__container">
+        <div class="pets__container pets__container_narrow">
           <h2 class="pets__title section-title">Our friends who<br>are looking for a house</h2>
           <div class="pets__slider pets-slider">
             <div class="pets-slider__wrapper">
@@ -45,22 +47,24 @@
                 </li>
               </ul>
             </div>
-            <button class="pets-slider__nav-button pets-slider__nav-button_prev" type="button">
-              <svg width="14" height="6">
-                <use href="@img/icons/sprite.svg#arrow-slider"></use>
-              </svg>
-            </button>
-            <button class="pets-slider__nav-button pets-slider__nav-button_next" type="button">
-              <svg width="14" height="6">
-                <use href="@img/icons/sprite.svg#arrow-slider"></use>
-              </svg>
-            </button>
+            <div class="pets-slider__nav-buttons">
+              <button class="pets-slider__nav-button pets-slider__nav-button_prev" type="button">
+                <svg width="14" height="6">
+                  <use href="@img/icons/sprite.svg#arrow-slider"></use>
+                </svg>
+              </button>
+              <button class="pets-slider__nav-button pets-slider__nav-button_next" type="button">
+                <svg width="14" height="6">
+                  <use href="@img/icons/sprite.svg#arrow-slider"></use>
+                </svg>
+              </button>
+            </div>
           </div>
           <a class="pets__link button-primary" href="pets.html">Get to know the rest</a>
         </div>
       </section>
       <section class="page__help help" id="help">
-        <div class="help__container">
+        <div class="help__container help__container_narrow">
           <h2 class="help__title section-title">How you can help<br>our shelter</h2>
           <ul class="help__list">
             <li class="help__item">

@@ -54,6 +54,7 @@ $containerPadding: 80;
 $containerWidth: $maxWidthContainer + $containerPadding;
 
 // Размеры устройств
+$desktopWidth: 1279.98;
 $tabletWidth: 767.98;
 $mobileWidth: 319.98;
 
@@ -123,8 +124,19 @@ body {
     }
     @if ($containerPadding>0) {
       // padding: 0 rem(math.div($containerPadding, 2));
-      @include adaptiveValue('padding-left', math.div($containerPadding, 2), 16, 768, 380, 1);
-      @include adaptiveValue('padding-right', math.div($containerPadding, 2), 16, 768, 380, 1);
+
+      @include adaptiveValue('padding-left', math.div($containerPadding, 2), 30, $containerWidth, 768, 2);
+      @include adaptiveValue('padding-left', 30, 20, 768, 320);
+
+      @include adaptiveValue('padding-right', math.div($containerPadding, 2), 30, $containerWidth, 768, 2);
+      @include adaptiveValue('padding-right', 30, 20, 768, 320);
+    }
+  }
+
+  [class*='__container_narrow'] {
+    @if ($containerPadding>0) {
+      @include adaptiveValue('padding-left', 30, 10, 768, 320);
+      @include adaptiveValue('padding-right', 30, 10, 768, 320);
     }
   }
 } @else {
@@ -181,6 +193,13 @@ body {
   &__pets,
   &__help,
   &__donation {
-    padding: rem(80) 0 rem(100);
+    padding: 0;
+
+    @include adaptiveValue('padding-top', 80, 42, 768, 320, 1);
+    @include adaptiveValue('padding-bottom', 100, 42, 768, 320, 1);
+  }
+  .html-pets &__pets {
+    @include adaptiveValue('padding-bottom', 100, 76, $containerWidth, 768, 2);
+    @include adaptiveValue('padding-bottom', 76, 42, 768, 320);
   }
 }

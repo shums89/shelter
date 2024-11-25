@@ -7,18 +7,29 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      row-gap: rem(60);
     }
     // .pets__title
     &__title {
       text-align: center;
+      @include adaptiveValue('margin-bottom', 60, 30, $containerWidth, 768, 2);
+      @include adaptiveValue('margin-bottom', 30, 42, 768, 320);
     }
     // .pets__list
     &__list {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, rem(270));
+      grid-auto-rows: 1fr;
+      justify-content: center;
       gap: rem(30) rem(40);
+
+      @include adaptiveValue('margin-bottom', 60, 40, $containerWidth, 768, 2);
+      @include adaptiveValue('margin-bottom', 40, 42, 768, 320);
+
+      @media (max-width: em(768)) {
+        max-height: rem(1365);
+        overflow: hidden;
+      }
     }
     // .pets__item
     &__item {
@@ -32,7 +43,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: rem(20);
+
+    @include adaptiveValue('column-gap', 20, 10, 768, 320, 1);
 
     // .pets-pagination__button
     &__button {

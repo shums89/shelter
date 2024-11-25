@@ -7,11 +7,28 @@
   // .footer__container
   &__container {
     display: flex;
-    gap: rem(160);
+    flex-wrap: wrap;
     height: 100%;
     padding-top: rem(57);
     padding-bottom: rem(37);
     background: url('@img/footer-puppy.png') calc(100% - rem(40)) bottom no-repeat;
+
+    @include adaptiveValue('padding-top', 57, 30, $containerWidth, 768, 1);
+    @include adaptiveValue('column-gap', 160, 60, $containerWidth, 768, 1);
+    @include adaptiveValue('row-gap', 40, 17, 768, 320, 1);
+
+    @media (max-width: em(1200)) {
+      justify-content: center;
+      @include adaptiveValue('padding-bottom', 353, 300, 768, 320, 1);
+    }
+
+    @media (max-width: em(940)) {
+      background: url('@img/footer-puppy.png') center bottom / 300px no-repeat;
+    }
+
+    @media (max-width: em($tabletWidth)) {
+      background: url('@img/footer-puppy.png') center bottom / 260px no-repeat;
+    }
   }
   // .footer__contacts
   &__contacts {
@@ -26,6 +43,19 @@
     line-height: 130%;
     letter-spacing: 0.06em;
     color: $colorLightXL;
+
+    @include adaptiveValue('font-size', 35, 25, 768, 320, 1);
+
+    @media (max-width: em($tabletWidth)) {
+      max-width: rem(290);
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+
+      & br {
+        display: none;
+      }
+    }
   }
   // .footer__list
   &__list {
@@ -33,6 +63,18 @@
     display: grid;
     grid-template-rows: repeat(2, rem(64));
     gap: rem(8);
+
+    .footer__contacts & {
+      @media (max-width: em($tabletWidth)) {
+        justify-items: center;
+      }
+    }
+
+    .footer__locations & {
+      @media (max-width: em(320)) {
+        grid-template-rows: repeat(2, rem(73));
+      }
+    }
   }
   // .footer__item
   &__item {
