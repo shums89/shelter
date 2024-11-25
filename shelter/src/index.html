@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" class="html-home">
+@@include('html/_head.htm',{
+"title":"Cozy House"
+})
+
+<body>
+  <div class="wrapper">
+    @@include('html/_header.htm',{})
+    <main class="page">
+      <h1 class="visually-hidden">Cozy House. Shelter for pets in Boston</h1>
+      <section class="page__promo promo">
+        <div class="promo__container">
+          <h2 class="promo__title">Not only people need a house</h2>
+          <p class="promo__text">We offer to give a chance to a little and nice puppy with an extremely wide and open heart. He or she will love you more than anybody else in the world, you will see!</p>
+          <a class="promo__link button-primary" href="#pets">Make a friend</a>
+        </div>
+      </section>
+      <section class="page__about about">
+        <div class="about__container">
+          <div class="about__content">
+            <h2 class="about__title section-title">About the shelter “Cozy House”</h2>
+            <p class="about__text">Currently we have 121 dogs and 342 cats on our hands and statistics show that only 20% of them will find a family. The others will continue to live with us and will be waiting for a lucky chance to become dearly loved.</p>
+            <p class="about__text">We feed our wards with the best food and make sure that they do not get sick, feel comfortable (including psychologically) and well. We are supported by 87 volunteers and 28 employees of various skill levels. About 12% of the animals are taken by the shelter staff. Taking care of the animals, they become attached to the pets and would hardly ever leave them alone.</p>
+          </div>
+          <div class="about__img-wrapper">
+            <img class="about__img" src="@img/about-pets.jpg" alt="Cat and dog">
+          </div>
+        </div>
+      </section>
+      <section class="page__pets pets" id="pets">
+        <div class="pets__container">
+          <h2 class="pets__title section-title">Our friends who<br>are looking for a house</h2>
+          <div class="pets__slider pets-slider">
+            <div class="pets-slider__wrapper">
+              <ul class="pets-slider__swiper">
+                <li class="pets-slider__slide">
+                  @@include('html/_card.htm',{ "title":"Katrine", "image":"katrine.jpg"})
+                </li>
+                <li class="pets-slider__slide">
+                  @@include('html/_card.htm',{ "title":"Jennifer", "image":"jennifer.jpg"})
+                </li>
+                <li class="pets-slider__slide">
+                  @@include('html/_card.htm',{ "title":"Woody", "image":"woody.jpg"})
+                </li>
+              </ul>
+            </div>
+            <button class="pets-slider__nav-button pets-slider__nav-button_prev" type="button">
+              <svg width="14" height="6">
+                <use href="@img/icons/sprite.svg#arrow-slider"></use>
+              </svg>
+            </button>
+            <button class="pets-slider__nav-button pets-slider__nav-button_next" type="button">
+              <svg width="14" height="6">
+                <use href="@img/icons/sprite.svg#arrow-slider"></use>
+              </svg>
+            </button>
+          </div>
+          <a class="pets__link button-primary" href="pets.html">Get to know the rest</a>
+        </div>
+      </section>
+      <section class="page__help help" id="help">
+        <div class="help__container">
+          <h2 class="help__title section-title">How you can help<br>our shelter</h2>
+          <ul class="help__list">
+            <li class="help__item">
+              <svg width="60" height="60">
+                <use href="@img/icons/sprite.svg#pet-food"></use>
+              </svg>
+              <h3 class="help__item-name">Pet food</h3>
+            </li>
+            <li class="help__item">
+              <svg width="60" height="60">
+                <use href="@img/icons/sprite.svg#transportation"></use>
+              </svg>
+              <h3 class="help__item-name">Transportation</h3>
+            </li>
+            <li class="help__item">
+              <svg width="60" height="60">
+                <use href="@img/icons/sprite.svg#toys"></use>
+              </svg>
+              <h3 class="help__item-name">Toys</h3>
+            </li>
+            <li class="help__item">
+              <svg width="60" height="60">
+                <use href="@img/icons/sprite.svg#bowls-and-cups"></use>
+              </svg>
+              <h3 class="help__item-name">Bowls and cups</h3>
+            </li>
+            <li class="help__item">
+              <svg width="60" height="60">
+                <use href="@img/icons/sprite.svg#shampoos"></use>
+              </svg>
+              <h3 class="help__item-name">Shampoos</h3>
+            </li>
+            <li class="help__item">
+              <svg width="60" height="60">
+                <use href="@img/icons/sprite.svg#vitamins"></use>
+              </svg>
+              <h3 class="help__item-name">Vitamins</h3>
+            </li>
+            <li class="help__item">
+              <svg width="60" height="60">
+                <use href="@img/icons/sprite.svg#medicines"></use>
+              </svg>
+              <h3 class="help__item-name">Medicines</h3>
+            </li>
+            <li class="help__item">
+              <svg width="60" height="60">
+                <use href="@img/icons/sprite.svg#collars"></use>
+              </svg>
+              <h3 class="help__item-name">Collars / leashes</h3>
+            </li>
+            <li class="help__item">
+              <svg width="60" height="60">
+                <use href="@img/icons/sprite.svg#sleeping-area"></use>
+              </svg>
+              <h3 class="help__item-name">Sleeping areas</h3>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="page__donation donation">
+        <div class="donation__container">
+          <div class="donation__img-wrapper">
+            <img src="@img/donation-dog.png" alt="Dog">
+          </div>
+          <div class="donation__content">
+            <h2 class="donation__title section-title">You can also<br>make a donation</h2>
+            <p class="donation__subtitle">Name of the bank / Type of bank account</p>
+            <a href="#" class="donation__credit-card">
+              <svg width="30" height="23">
+                <use href="@img/icons/sprite.svg#credit-card"></use>
+              </svg>
+              <span>8380 2880 8028 8791 7435</span>
+            </a>
+            <p class="donation__legal-info">Legal information and lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a ipsum at libero sagittis dignissim sed ac diam. Praesent ultrices maximus tortor et vulputate. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+    @@include('html/_footer.htm',{})
+  </div>
+  @@include('html/_js.htm',{})
+</body>
+
+</html>

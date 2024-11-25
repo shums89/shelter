@@ -1,0 +1,186 @@
+@use 'sass:math';
+
+// Подключение миксинов
+@import 'base/mixins';
+
+//====================================================================
+// Подключение шрифтов
+
+// &display=swap - добавить при подключении через плагин
+
+// Подключить если есть локальные файлы шрифтов
+// @import 'fonts/fonts';
+
+// Подключение иконочных шрифтов
+// Подключить если есть файл иконочного шрифта
+//@import "fonts/icons";
+
+//====================================================================
+// Шрифт по умолчанию
+$fontFamily: 'Georgia';
+$fontSecondary: 'Arial';
+$fontSize: rem(15); // где 14(px) - размер шрифта по умолчанию из макета
+
+// Основные цвета
+$colorMain: #000; // Цвет шрифта по умолчанию
+$colorBgBody: #fff;
+$colorPrimary: #f1cdb3;
+$colorPrimaryLight: #fddcc4;
+$colorLightXL: #fff;
+$colorLightL: #f6f6f6;
+$colorLightS: #fafafa;
+$colorDarkS: #cdcdcd;
+$colorDarkM: #b2b2b2;
+$colorDarkL: #545454;
+$colorDarkXL: #4c4c4c;
+$colorDark2XL: #444;
+$colorDark3XL: #292929;
+$gradientBackground: #211f20;
+
+//====================================================================
+// НАСТРОЙКИ
+
+// Минимальная ширина страницы
+$minWidth: 320;
+// Ширина полотна (макета)
+$maxWidth: 1280;
+// Ширина ограничивающего контейнера (0 = нет ограничения)
+$maxWidthContainer: 1200;
+// Общий отступ у контейнера
+// (30 = по 15px слева и справа, 0 = нет отступа)
+$containerPadding: 80;
+
+// Ширина срабатывания первого брейкпоинта
+$containerWidth: $maxWidthContainer + $containerPadding;
+
+// Размеры устройств
+$tabletWidth: 767.98;
+$mobileWidth: 319.98;
+
+// Брейк-поинты
+$pc: em($containerWidth); // ПК, ноутбуки, некоторые планшеты в горизонтальном положении
+$tablet: em($tabletWidth); // Планшеты, некоторые телефоны в горизонтальном положении
+$mobile: em($mobileWidth); // Телефоны L
+
+// Тип адаптива:
+// 1 = отзывчивость (у контейнера нет брейкпоинтов),
+// 2 = по брейк-поинтам (контейнер меняет свою ширину по брейк-поинтам)
+$responsiveType: 1;
+
+//====================================================================
+// Обнуление и общие параметры
+@import 'base/null';
+
+html {
+  scroll-behavior: smooth;
+  background: $colorBgBody;
+}
+
+body {
+  // Скролл заблокирован
+  .lock & {
+    overflow: hidden;
+    touch-action: none;
+  }
+  // Сайт загружен
+  .loaded & {
+  }
+}
+
+//====================================================================
+// Оболочка
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  // Прижимаем footer
+  > main {
+    flex: 1 1 auto;
+  }
+  // Фикс для слайдеров
+  > * {
+    min-width: 0;
+  }
+}
+
+//====================================================================
+// Ограничивающий контейнер
+
+/*
+Стили будут применяться ко 
+всем классам содержащим *__container
+Например header__container, main__container и т.д.
+Снипет (HTML): cnt
+*/
+@if ($responsiveType==1) {
+  // Отзывчивая
+  [class*='__container'] {
+    @if ($maxWidthContainer>0) {
+      max-width: rem($maxWidthContainer);
+      box-sizing: content-box;
+      margin: 0 auto;
+    }
+    @if ($containerPadding>0) {
+      // padding: 0 rem(math.div($containerPadding, 2));
+      @include adaptiveValue('padding-left', math.div($containerPadding, 2), 16, 768, 380, 1);
+      @include adaptiveValue('padding-right', math.div($containerPadding, 2), 16, 768, 380, 1);
+    }
+  }
+} @else {
+  // По брейк-поинтам
+  [class*='__container'] {
+    margin: 0 auto;
+    @if ($maxWidthContainer>0) {
+      max-width: rem($maxWidthContainer);
+      box-sizing: content-box;
+    } @else {
+      @if ($containerPadding>0) {
+        padding: 0 rem(math.div($containerPadding, 2));
+      }
+    }
+    @media (max-width: $pc) {
+      max-width: rem(970);
+    }
+    @media (max-width: $tablet) {
+      max-width: rem(750);
+    }
+    @media (max-width: $mobile) {
+      max-width: none;
+      @if ($containerPadding>0 and $maxWidthContainer>0) {
+        padding: 0 rem(math.div($containerPadding, 2));
+      }
+    }
+  }
+}
+
+// Подключение базовых стилей, шаблонов (заготовок) и вспомогательных  классов
+// Для подключения/отключения конкретных стилей смотри base.scss
+@import 'base';
+
+// Подключение стилей общих элементов проекта
+@import 'common';
+
+// Подключение стилей отдельных блоков
+@import 'header';
+@import 'footer';
+
+// Подключение стилей отдельных страниц
+@import 'index';
+@import 'pets';
+
+.page {
+  // .page__promo
+  &__promo {
+  }
+  // .page__about
+  // .page__pets
+  // .page__help
+  // .page__donation
+  &__about,
+  &__pets,
+  &__help,
+  &__donation {
+    padding: rem(80) 0 rem(100);
+  }
+}

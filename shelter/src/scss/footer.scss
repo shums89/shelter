@@ -1,0 +1,65 @@
+.footer {
+  background:
+    url('@img/noise_transparent.png') repeat,
+    radial-gradient(circle at left top, #513d2f 0%, #1a1a1c 100%),
+    $gradientBackground;
+
+  // .footer__container
+  &__container {
+    display: flex;
+    gap: rem(160);
+    height: 100%;
+    padding-top: rem(57);
+    padding-bottom: rem(37);
+    background: url('@img/footer-puppy.png') calc(100% - rem(40)) bottom no-repeat;
+  }
+  // .footer__contacts
+  &__contacts {
+    max-width: rem(279);
+  }
+  // .footer__title
+  &__title {
+    margin-bottom: rem(23);
+    font-family: $fontFamily;
+    font-weight: 400;
+    font-size: rem(35);
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: $colorLightXL;
+  }
+  // .footer__list
+  &__list {
+    height: rem(142);
+    display: grid;
+    grid-template-rows: repeat(2, rem(64));
+    gap: rem(8);
+  }
+  // .footer__item
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: rem(20);
+    font-family: $fontFamily;
+    font-weight: 400;
+    font-size: rem(20);
+    line-height: 115%;
+    letter-spacing: 0.06em;
+    color: $colorPrimary;
+
+    & > svg {
+      flex: 0 0 auto;
+    }
+  }
+  // .footer__link
+  &__link {
+    @media (any-hover: hover) {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  // .footer__locations
+  &__locations {
+    max-width: rem(302);
+  }
+}

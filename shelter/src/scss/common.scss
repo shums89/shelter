@@ -1,0 +1,100 @@
+// Заголовки, общие БЄМ блоки и прочее...
+
+.button-primary,
+.button-secondary {
+  width: max-content;
+  padding: rem(15) rem(45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: rem(100);
+  color: $colorDark3XL;
+  font-family: $fontFamily;
+  font-size: rem(17);
+  font-weight: 400;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  transition: all 0.3s ease 0s;
+
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: $colorPrimaryLight;
+    }
+  }
+}
+
+.button-primary {
+  background-color: $colorPrimary;
+}
+
+.button-secondary {
+  background-color: transparent;
+  border: rem(2) solid $colorPrimary;
+
+  @media (any-hover: hover) {
+    &:hover {
+      border: rem(2) solid $colorPrimaryLight;
+    }
+  }
+}
+
+//====================================================================
+
+.section-title {
+  font-family: $fontFamily;
+  font-weight: 400;
+  font-size: rem(35);
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  color: $colorDarkL;
+}
+
+//====================================================================
+
+.card {
+  // .card__link
+  &__link {
+    width: rem(270);
+    height: rem(435);
+    display: grid;
+    grid-template-rows: rem(270) 1fr;
+    border-radius: rem(9);
+    overflow: hidden;
+    background-color: $colorLightS;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: $colorLightXL;
+        box-shadow: 0 2px 35px 14px rgba(13, 13, 13, 0.04);
+      }
+    }
+  }
+  // .card__image-ibg
+  &__image-ibg {
+    width: rem(270);
+    height: rem(270);
+  }
+  // .card__content
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: rem(30);
+  }
+  // .card__title
+  &__title {
+    font-family: $fontFamily;
+    font-weight: 400;
+    font-size: rem(20);
+    letter-spacing: 0.06em;
+    color: $colorDarkL;
+  }
+  // .card__button
+  .card__link:hover &__button {
+    background-color: $colorPrimaryLight;
+    border: rem(2) solid $colorPrimaryLight;
+  }
+}
