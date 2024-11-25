@@ -70,7 +70,7 @@
     @media (any-hover: hover) {
       &:hover {
         background-color: $colorLightXL;
-        box-shadow: 0 2px 35px 14px rgba(13, 13, 13, 0.04);
+        box-shadow: 0 rem(2) rem(35) rem(14) rgba(13, 13, 13, 0.04);
       }
     }
   }
@@ -99,5 +99,175 @@
   .card__link:hover &__button {
     background-color: $colorPrimaryLight;
     border: rem(2) solid $colorPrimaryLight;
+  }
+}
+
+//====================================================================
+
+.modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(29, 29, 29, 0.6);
+  z-index: 10;
+
+  &.hidden {
+    display: none;
+  }
+
+  // .modal__wrapper
+  &__wrapper {
+    position: relative;
+    display: grid;
+    grid-template-columns: min-content min-content;
+    border-radius: rem(9);
+    background-color: $colorLightS;
+    box-shadow: 0 rem(2) rem(35) rem(14) rgba(13, 13, 13, 0.04);
+  }
+  // .modal__image
+  &__image {
+    width: rem(500);
+    height: rem(500);
+    border-radius: rem(9) 0 0 rem(9);
+    overflow: hidden;
+
+    @include adaptiveValue('width', 500, 350, $containerWidth, 768, 1);
+    @include adaptiveValue('height', 500, 350, $containerWidth, 768, 1);
+
+    @media (max-width: em($tabletWidth)) {
+      display: none;
+    }
+
+    & img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+  }
+  // .modal__content
+  &__content {
+    padding-bottom: rem(10);
+
+    @include adaptiveValue('width', 400, 281, $containerWidth, 768, 2);
+    @include adaptiveValue('width', 281, 240, 768, 320);
+
+    @include adaptiveValue('padding-top', 50, 10, $containerWidth, 768, 1);
+    @include adaptiveValue('padding-right', 20, 10, $containerWidth, 768, 1);
+    @include adaptiveValue('padding-left', 29, 10, $containerWidth, 768, 1);
+  }
+  // .modal__title
+  &__title {
+    margin-bottom: rem(10);
+    font-family: $fontFamily;
+    font-size: rem(35);
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: $colorMain;
+
+    @media (max-width: em($tabletWidth)) {
+      text-align: center;
+    }
+  }
+  // .modal__subtitle
+  &__subtitle {
+    font-family: $fontFamily;
+    font-size: rem(20);
+    line-height: 115%;
+    letter-spacing: 0.06em;
+    color: $colorMain;
+
+    @include adaptiveValue('margin-bottom', 40, 20, $containerWidth, 768, 1);
+
+    @media (max-width: em($tabletWidth)) {
+      text-align: center;
+    }
+  }
+  // .modal__description
+  &__description {
+    font-family: $fontFamily;
+    font-size: rem(15);
+    letter-spacing: 0.06em;
+    color: $colorMain;
+
+    @include adaptiveValue('margin-bottom', 40, 20, $containerWidth, 768, 2);
+    @include adaptiveValue('margin-bottom', 20, 24, 768, 320);
+
+    @include adaptiveValue('font-size', 15, 13, $containerWidth, 768, 1);
+    @include adaptiveValue('line-height', 17, 14, $containerWidth, 768, 1);
+
+    @media (max-width: em($tabletWidth)) {
+      text-align: justify;
+    }
+  }
+  // .modal__parameters-list
+  &__parameters-list {
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(12);
+    font-family: $fontFamily;
+    font-size: 15px;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+    color: $colorMain;
+
+    @include adaptiveValue('row-gap', 12, 6, $containerWidth, 768, 1);
+  }
+  // .modal__parameters-item
+  &__parameters-item {
+    position: relative;
+    padding-left: rem(14);
+
+    &:before {
+      position: absolute;
+      content: '';
+      width: rem(4);
+      height: rem(4);
+      left: 0;
+      top: rem(6);
+      border-radius: 50%;
+      background-color: $colorPrimary;
+    }
+
+    // .modal__parameters-item_age
+    &_age {
+    }
+    // .modal__parameters-item_inoculations
+    &_inoculations {
+    }
+    // .modal__parameters-item_diseases
+    &_diseases {
+    }
+    // .modal__parameters-item_parasites
+    &_parasites {
+    }
+  }
+  // .modal__btn
+  &__btn {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: rem(52);
+    height: rem(52);
+    top: rem(-52);
+    right: rem(-42);
+    border-radius: 50%;
+    color: $colorDark3XL;
+    background-color: transparent;
+    border: rem(2) solid $colorPrimary;
+    transition: all 0.3s ease 0s;
+
+    @media (max-width: em($tabletWidth)) {
+      right: rem(-30);
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: $colorPrimaryLight;
+        border: rem(2) solid $colorPrimaryLight;
+      }
+    }
   }
 }

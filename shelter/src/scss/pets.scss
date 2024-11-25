@@ -17,8 +17,9 @@
     // .pets__list
     &__list {
       width: 100%;
+      height: rem(900);
       display: grid;
-      grid-template-columns: repeat(auto-fit, rem(270));
+      grid-template-columns: repeat(4, rem(270));
       grid-auto-rows: 1fr;
       justify-content: center;
       gap: rem(30) rem(40);
@@ -26,9 +27,13 @@
       @include adaptiveValue('margin-bottom', 60, 40, $containerWidth, 768, 2);
       @include adaptiveValue('margin-bottom', 40, 42, 768, 320);
 
-      @media (max-width: em(768)) {
-        max-height: rem(1365);
-        overflow: hidden;
+      @media (max-width: em($desktopWidth)) {
+        grid-template-columns: repeat(2, rem(270));
+        height: rem(1365);
+      }
+
+      @media (max-width: em($tabletWidth)) {
+        grid-template-columns: repeat(1, rem(270));
       }
     }
     // .pets__item
@@ -53,7 +58,6 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      align-content: center;
       border: rem(2) solid $colorPrimary;
       border-radius: 50%;
       font-family: $fontFamily;
@@ -64,12 +68,12 @@
       text-align: center;
       color: $colorDark3XL;
       transition: all 0.3s ease 0s;
+      user-select: none;
 
       &:disabled {
         color: $colorDarkS;
         border: rem(2) solid $colorDarkS;
         cursor: default;
-        user-select: none;
         pointer-events: none;
       }
 
@@ -87,19 +91,32 @@
       // .pets-pagination__button_prev
       &_prev {
       }
-      // .pets-pagination__button_page
-      &_page {
-        background-color: $colorPrimary;
-        cursor: default;
-        user-select: none;
-        pointer-events: none;
-      }
       // .pets-pagination__button_next
       &_next {
       }
       // .pets-pagination__button_last
       &_last {
       }
+    }
+    // .pets-pagination__page
+    &__page {
+      width: rem(52);
+      height: rem(52);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      font-family: $fontFamily;
+      font-weight: 400;
+      font-size: rem(20);
+      line-height: 115%;
+      letter-spacing: 0.06em;
+      text-align: center;
+      color: $colorDark3XL;
+      background-color: $colorPrimary;
+      cursor: default;
+      user-select: none;
+      pointer-events: none;
     }
   }
 }
